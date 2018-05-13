@@ -1,3 +1,4 @@
+
 import machine, network, utime
 
 print("")
@@ -32,17 +33,3 @@ if tmo > 0:
         t = rtc.now()
         utime.strftime("%c")
         print("")
-
-if tmo == 0:
-    sta_if = network.WLAN(network.AP_IF)
-    sta_if.active(True)
-    print("WiFi started in AP mode")
-    utime.sleep_ms(100)
-    print(sta_if.ifconfig())
-
-network.telnet.start()
-utime.sleep_ms(500)
-print ("Telnet Started ",network.telnet.status())
-network.ftp.start()
-utime.sleep_ms(500)
-print ("FTP Started ",network.ftp.status())
